@@ -17,13 +17,18 @@ const getForecast = ({latitude, longitude}, callback) => {
             callback(error, undefined);
             return;
         }
-        let temperature = response.body.currently.temperature;
-        let chanceDeChuva = response.body.currently.precipProbability;
-        let summary = response.body.daily.data[0].summary;
+        let temperature = response.body.currently.temperature
+        let chanceDeChuva = response.body.currently.precipProbability
+        let summary = response.body.daily.data[0].summary
+        let precipType = response.body.currently.precipType;
+        let icon = response.body.currently.icon;
+        
         callback(undefined, {
             temperature,
             chanceDeChuva,
-            summary
+            summary,
+            precipType,
+            icon
         })
         
     });
