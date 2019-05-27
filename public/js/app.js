@@ -11,7 +11,7 @@ weatherForm.addEventListener('submit', (event) => {
     pMessage1.textContent = 'Loading forecast...'
     pMessage2.textContent = ''
 
-    fetch('http://localhost:3000/weather?address=' + location).then((response) => {
+    fetch('/weather?address=' + location).then((response) => {
         if(!response.ok) {
             return pMessage1.textContent = 'Error when trying to fetch the forecast.'
         }
